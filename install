@@ -1,0 +1,10 @@
+#! /bin/bash
+
+# Create symlinks.
+ln -s $PWD/vim $HOME/.vim
+ln -s $PWD/vimrc $HOME/.vimrc
+
+ln -s $PWD/oh-my-zsh $HOME/.oh-my-zsh
+ln -s $PWD/zshrc $HOME/.zshrc
+
+ln -s $PWS/Xresources $HOME/.Xresources
