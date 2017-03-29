@@ -3,13 +3,11 @@ set smartindent
 set autoindent
 set tabstop=2
 set shiftwidth=2
-set list
 syntax on
 
 set nocompatible
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 " Input
 set mouse=a
 set backspace=2
@@ -38,6 +36,9 @@ au FileType python map <F6> :!clear && python3 -i %<CR>
 au FileType tex map <F5> :!clear && pdflatex -shell-escape % && latexmk -c %<CR>
 au FileType javascript map <F5> :!clear && node %<CR>
 
+" Open Nerdtree with CTRL + N
+map <C-n> :NERDTreeToggle<CR>
+
 " Paste behavior
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
@@ -55,5 +56,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Wakatime
 let g:wakatime_PythonBinary = '/usr/bin/python2'
 
+call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
-Bundle 'wakatime/vim-wakatime'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rhysd/vim-crystal'
+
+call vundle#end()
